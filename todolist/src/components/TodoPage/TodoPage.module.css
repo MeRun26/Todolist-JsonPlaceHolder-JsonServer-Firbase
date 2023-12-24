@@ -1,0 +1,24 @@
+body {
+	background-color: rgb(140, 250, 0);
+}
+
+.todoListContainer {
+	font-family: Arial, sans-serif;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+li {
+	border-bottom: 1px solid #ccc;
+	padding: 10px 0;
+}
+
+li:last-child {
+	border-bottom: none;
+}
