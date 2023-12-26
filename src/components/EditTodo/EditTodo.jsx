@@ -7,6 +7,7 @@ const EditTodo = ({ handleEdit, editTodo, todo }) => {
 
     const handleChange = (event) => {
         const { name, value } = event.target;
+
         setValue((prevState) => 
         ({
             ...prevState,
@@ -26,8 +27,6 @@ const EditTodo = ({ handleEdit, editTodo, todo }) => {
     }
 
     useEffect(() => {}, [value]);  
-   
-
     const handleCancel = () => {
         setValue(todo.name);
         handleEdit();
@@ -40,7 +39,7 @@ const EditTodo = ({ handleEdit, editTodo, todo }) => {
                     className={style.TodoName}
                     type='text'
                     id='name'
-                    name={todo.name}
+                    name='name'
                     value={value.name}
                     onChange={handleChange}
                 />

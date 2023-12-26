@@ -22,20 +22,27 @@ const TodoPage = () => {
     };
     let sortedTodos = [];
 
+    // const sortTodosAlphabet = () => {
+    // sortedTodos = [...todos].sort((a, b) => {
+    //     const nameA = a.name.toLowerCase();
+    //     const nameB = b.name.toLowerCase();
+    //     if (nameA < nameB) {
+    //         return -1;
+    //     }
+    //     if (nameA > nameB) {
+    //         return 1;
+    //     }
+    //     return 0;
+    // });
+    //     setTodos(sortedTodos);
+    // };
+
     const sortTodosAlphabet = () => {
-    sortedTodos = [...todos].sort((a, b) => {
-        const nameA = a.name.toLowerCase();
-        const nameB = b.name.toLowerCase();
-        if (nameA < nameB) {
-            return -1;
-        }
-        if (nameA > nameB) {
-            return 1;
-        }
-        return 0;
-    });
-        setTodos(sortedTodos);
-    };
+        sortedTodos = todos
+            .slice()
+            .sort((a,b) => (a.name < b.name ? 1 : -1));
+            setTodos(sortedTodos);
+    }
 
     const deleteTodo = (id) => {
 		fetch(`http://localhost:1326/todos/${id}`, {
